@@ -1,0 +1,11 @@
+---
+applications:
+  - name: sap-test-sample
+    random-route: true
+    memory: 256M
+    disk_quota: 256M
+    buildpacks:
+      - nodejs_buildpack
+    command: npm start
+    services:
+      - sap-test-auth
