@@ -60,6 +60,25 @@ test('GET /api/admin/roles blocks viewer access', async () => {
   assert.equal(response.status, 403);
 });
 
+test('GET /api/products returns admin fields when both viewer and admin roles are present', async () => {
+  const response = await request(app)
+    .get('/api/products')
+    .set('x-mock-user', 'power-user')
+    .set('x-mock-roles', 'CatalogViewer,CatalogAdmin');
+
+  assert.equal(response.status, 200);
+  assert.equal(response.body.role, 'CatalogAdmin');
+  assert.deepEqual(response.body.visibleFields, [
+    'id',
+    'name',
+    'category',
+    'price',
+    'supplierCost',
+    'internalNotes'
+  ]);
+  assert.equal(response.body.products[0].supplierCost, 620);
+});
+
 test('GET /api/admin/roles allows admin access', async () => {
   const response = await request(app)
     .get('/api/admin/roles')
