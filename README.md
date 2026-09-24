@@ -23,7 +23,7 @@ npm install
 ALLOW_MOCK_AUTH=true npm start
 ```
 
-For local development only, when no XSUAA service is bound and `ALLOW_MOCK_AUTH=true` is set, the app accepts mock headers:
+For local development and automated testing, when `ALLOW_MOCK_AUTH=true` is set, the app accepts mock headers:
 
 ```bash
 curl http://localhost:8080/api/products \
