@@ -64,4 +64,10 @@ npm test
    cf push
    ```
 
-4. In SAP BTP, create role collections that contain the `CatalogViewer` and `CatalogAdmin` role templates from `xs-security.json`, assign those role collections to users, and access the protected routes through the deployed app URL.
+4. If you change scopes or role templates later, update the service instance before redeploying:
+
+   ```bash
+   cf update-service sap-test-auth -c @xs-security.json
+   ```
+
+5. In SAP BTP, create role collections that contain the `CatalogViewer` and `CatalogAdmin` role templates from `xs-security.json`, assign those role collections to users, and access the protected routes through the deployed app URL.
