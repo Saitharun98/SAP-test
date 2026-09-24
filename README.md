@@ -2,6 +2,8 @@
 
 This repository contains a minimal Node.js sample application that can be deployed to SAP BTP Cloud Foundry with XSUAA-backed role enforcement.
 
+The sample is configured as a single-tenant application and uses `tenant-mode: dedicated` in `xs-security.json`.
+
 ## What is included
 
 - `manifest.yml` for Cloud Foundry deployment
@@ -53,6 +55,8 @@ npm test
    ```bash
    cf create-service xsuaa application sap-test-auth -c @xs-security.json
    ```
+
+   This creates the dedicated XSUAA instance expected by the application manifest for a single-tenant deployment.
 
 3. Push the application:
 
