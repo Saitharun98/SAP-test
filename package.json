@@ -5,11 +5,11 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "node --test"
+    "test": "ALLOW_MOCK_AUTH=true node --test"
   },
   "repository": {
     "type": "git",
-    "url": "http://localhost:26831/Saitharun98/SAP-test"
+    "url": "https://github.com/Saitharun98/SAP-test.git"
   },
   "keywords": [],
   "author": "",

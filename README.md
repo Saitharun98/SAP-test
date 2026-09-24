@@ -20,10 +20,10 @@ Two roles are defined in `xs-security.json`:
 
 ```bash
 npm install
-npm start
+ALLOW_MOCK_AUTH=true npm start
 ```
 
-For local development, when no XSUAA service is bound, the app accepts mock headers:
+For local development only, when no XSUAA service is bound and `ALLOW_MOCK_AUTH=true` is set, the app accepts mock headers:
 
 ```bash
 curl http://localhost:8080/api/products \
