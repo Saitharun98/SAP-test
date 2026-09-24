@@ -51,7 +51,7 @@ npm test
 2. Create the XSUAA instance:
 
    ```bash
-   cf create-service xsuaa application sap-test-auth -c xs-security.json
+   cf create-service xsuaa application sap-test-auth -c @xs-security.json
    ```
 
 3. Push the application:
