@@ -60,4 +60,4 @@ npm test
    cf push
    ```
 
-4. In SAP BTP, create role collections for `CatalogViewer` and `CatalogAdmin`, assign them to users, and access the protected routes through the deployed app URL.
+4. In SAP BTP, create role collections that contain the `CatalogViewer` and `CatalogAdmin` role templates from `xs-security.json`, assign those role collections to users, and access the protected routes through the deployed app URL.

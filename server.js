@@ -1,5 +1,7 @@
 const createApp = require('./app');
+const { validateAuthConfiguration } = require('./lib/auth');
 
+validateAuthConfiguration();
 const app = createApp();
 const port = process.env.PORT || 8080;
 
