@@ -1,0 +1,31 @@
+{
+  "xsappname": "sap-test-sample",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.CatalogViewer",
+      "description": "Read the product catalog with public fields only."
+    },
+    {
+      "name": "$XSAPPNAME.CatalogAdmin",
+      "description": "Read restricted catalog fields and access administration APIs."
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "CatalogViewer",
+      "description": "Can read product data without restricted fields.",
+      "scope-references": [
+        "$XSAPPNAME.CatalogViewer"
+      ]
+    },
+    {
+      "name": "CatalogAdmin",
+      "description": "Can access full product data and admin endpoints.",
+      "scope-references": [
+        "$XSAPPNAME.CatalogViewer",
+        "$XSAPPNAME.CatalogAdmin"
+      ]
+    }
+  ]
+}
