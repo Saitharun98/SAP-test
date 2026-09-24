@@ -34,8 +34,21 @@ test('GET /api/products returns restricted fields for admin role', async () => {
 
   assert.equal(response.status, 200);
   assert.equal(response.body.role, 'CatalogAdmin');
+  assert.deepEqual(response.body.visibleFields, [
+    'id',
+    'name',
+    'category',
+    'price',
+    'supplierCost',
+    'internalNotes'
+  ]);
   assert.equal(response.body.products[0].supplierCost, 620);
   assert.equal(response.body.products[0].internalNotes, 'Approved vendors only');
+  assert.equal(response.body.products[1].supplierCost, 180);
+  assert.equal(
+    response.body.products[1].internalNotes,
+    'Renewal managed by central procurement'
+  );
 });
 
 test('GET /api/admin/roles blocks viewer access', async () => {
